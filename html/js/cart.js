@@ -46,7 +46,6 @@ function show_shopping_list() {
     $('#sum').html(sum)
 }
 function add_number(id) {
-    console.log(id)
     var cartList = JSON.parse(localStorage.getItem('cart_list'));
     cartList[id].count++;
     localStorage.setItem('cart_list', JSON.stringify(cartList));
@@ -54,15 +53,20 @@ function add_number(id) {
 }
 function subtract_number(id) {
     var cartList = JSON.parse(localStorage.getItem('cart_list'));
-    if (cartList[id].count > 0) {
+
+    if (cartList[id].count >= 1) {
         cartList[id].count--;
     }
-    else {
+    if(cartList[id].count==0)
+     {
         cartList.splice(id, 1);
     }
     localStorage.setItem('cart_list', JSON.stringify(cartList));
-    location.reload()
+    location.reload();
+    if (cartList.length==0) {
+        window.location.href = 'item_list.html';
+    }
 }
-function openpay(){
-    window.location.href='pay.html'
+function openpay() {
+    window.location.href = 'pay.html'
 }

@@ -37,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item_list.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="item_list.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/html/js/item_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7906977">
+            <state vertical-scroll-proportion="0.0">
               <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc;n#loadAllItems#0" expanded="false" />
@@ -49,13 +49,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pay.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html/js/pay.js">
+      <file leaf-file-name="cart.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/js/cart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.627907">
+              <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
               <folding>
-                <element signature="e#0#36#0" expanded="false" />
+                <element signature="n#!!doc;n#loadPromotions#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -81,7 +81,6 @@
         <option value="$PROJECT_DIR$/Css/item_list.css" />
         <option value="$PROJECT_DIR$/html/main.js" />
         <option value="$PROJECT_DIR$/html/js/home.js" />
-        <option value="$PROJECT_DIR$/html/js/cart.js" />
         <option value="$PROJECT_DIR$/html/js/item_list.js" />
         <option value="$PROJECT_DIR$/html/item_list.html" />
         <option value="$PROJECT_DIR$/html/js/show_number.js" />
@@ -93,6 +92,7 @@
         <option value="$PROJECT_DIR$/html/Css/item_list.css" />
         <option value="$PROJECT_DIR$/html/Css/pay.css" />
         <option value="$PROJECT_DIR$/html/js/pay.js" />
+        <option value="$PROJECT_DIR$/html/js/cart.js" />
       </list>
     </option>
   </component>
@@ -433,6 +433,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -496,13 +497,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/js/cart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0697675">
-          <caret line="48" column="19" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html/js/show_number.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -517,6 +511,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.625">
           <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -586,6 +581,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/html/js/pay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.023255814">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html/Css/item_list.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -594,22 +599,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/js/pay.js">
+    <entry file="file://$PROJECT_DIR$/html/js/item_list.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
           <folding>
-            <element signature="e#0#36#0" expanded="false" />
+            <element signature="n#!!doc;n#loadAllItems#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/html/js/item_list.js">
+    <entry file="file://$PROJECT_DIR$/html/js/cart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7906977">
-          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.627907">
+          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
           <folding>
-            <element signature="n#!!doc;n#loadAllItems#0" expanded="false" />
+            <element signature="n#!!doc;n#loadPromotions#0" expanded="false" />
           </folding>
         </state>
       </provider>
