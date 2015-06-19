@@ -1,0 +1,69 @@
+th, td {
+    border: 1px solid #999999;
+    text-align: center;
+}
+
+#header {
+    background-color: black;
+    width: 1170px;
+    height: 50px;
+    font-size: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+a{
+    color: #999999;
+    text-decoration: none;
+}
+a:hover{
+    color: white;
+}
+li{
+    display: inline;
+    float: left;
+    padding: 10px;
+
+}
+.right{
+    float: right;
+}
+ul {
+    list-style-type:none;
+    padding:0;
+    margin: 0;
+}
+
+#goods_list ,table{
+    border-collapse: collapse;
+}
+table{
+    margin:0 auto;
+    margin-top: 10px;
+    width: 90%;
+}
+table tr td {
+    height: 400px;
+}
+#goods_list{
+    width: 98%;
+}
+table tr th{
+    background-color:  rgb(245,245,245);
+}
+img{
+    width: 17px;
+    height: 17px;
+    background-color: white;
+}
+button{
+    color: white;
+    height: 30px;
+    background-color: rgb(88, 135, 207);
+    border-radius: 5px;
+}
+#goods_list td{
+    height: 50px;
+}
+body{
+    margin: 0;
+}
