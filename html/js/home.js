@@ -4,3 +4,4 @@
 function openitem_list (){
     window.location.href= './item_list.html'
 }
+

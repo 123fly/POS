@@ -1,6 +1,4 @@
-/**
- * Created by li on 15-6-18.
- */
+
 var new_shopping_list = JSON.parse(localStorage.getItem('cart_list'));
 var barcodes = JSON.parse(localStorage.getItem('promotion_item'));
 function show_item_list() {
@@ -15,7 +13,7 @@ function show_item_list() {
                 sum = sum + item.price * item.count;
                 break;
             }
-            else {
+            if (item.barcode == barcodes[j]) {
                 html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + item.count + '</td>' + '<td id="subtotal">' + item.price * (item.count - parseInt(item.count / 3)) + '元(原价：' + item.price * item.count + '元)' + '</td>' + '</tr>';
                 sum = item.price * item.count + sum;
                 break;
@@ -38,7 +36,6 @@ function show_promation_item() {
                 if (parseInt(item.count / 3) != 0) {
                     html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + parseInt(item.count / 3) + '</td>' + '</tr>';
                     promotion_sum = item.price * parseInt(item.count / 3) + promotion_sum;
-                    break;
                 }
             }
         }
@@ -48,13 +45,14 @@ function show_promation_item() {
     $('#promotion_item').html(html);
     $('#promotion_sum').html(promotion_sum);
 }
-function open_item_list(){
-    var shopping_list=null;
+f
+function open_item_list() {
+    var shopping_list = null;
     localStorage.setItem('cart_list', JSON.stringify(shopping_list));
     location.reload();
-    window.location.href= 'item_list.html';
+    window.location.href = 'item_list.html';
 }
-function show_time(){
+function show_time() {
     dateDigitToString = function (num) {
         return num < 10 ? '0' + num : num;
     };

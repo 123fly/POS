@@ -18,22 +18,12 @@ function show_shopping_list() {
         var btn_id = i.toString();
         var item = new_shopping_list[i];
         for (var j = 0; j < barcodes.length; j++) {
-            if (item.barcode == barcodes[0]) {
+            if (item.barcode == barcodes[j]) {
                 html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + '<button id=' + btn_id + ' onclick="subtract_number(this.id)">-</button>' + '<input type="text" id="number" value=' + item.count + '>' + '<button id=' + btn_id + ' onclick="add_number(this.id)">+</button>' + '</td>' + '<td id="subtotal">' + item.price * (item.count - parseInt(item.count / 3)) + '元(原价：' + item.price * item.count + '元)' + '</td>' + '</tr>';
                 sum = sum + item.price * item.count;
                 break;
             }
-            else if (item.barcode == barcodes[1]) {
-                html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + '<button id=' + btn_id + ' onclick="subtract_number(this.id)">-</button>' + '<input type="text" id="number" value=' + item.count + '>' + '<button id=' + btn_id + ' onclick="add_number(this.id)">+</button>' + '</td>' + '<td id="subtotal">' + item.price * (item.count - parseInt(item.count / 3)) + '元(原价：' + item.price * item.count + '元)' + '</td>' + '</tr>';
-                sum = sum + item.price * item.count;
-                break;
-            }
-            else if (item.barcode == barcodes[2]) {
-                html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + '<button id=' + btn_id + ' onclick="subtract_number(this.id)">-</button>' + '<input type="text" id="number" value=' + item.count + '>' + '<button id=' + btn_id + ' onclick="add_number(this.id)">+</button>' + '</td>' + '<td id="subtotal">' + item.price * (item.count - parseInt(item.count / 3)) + '元(原价：' + item.price * item.count + '元)' + '</td>' + '</tr>';
-                sum = sum + item.price * item.count;
-                break;
-            }
-            else {
+            if(item.barcode!=barcodes[j]&& j==barcodes.length-1) {
                 html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + '<button id=' + btn_id + ' onclick="subtract_number(this.id)">-</button>' + '<input type="text" id="number" value=' + item.count + '>' + '<button id=' + btn_id + ' onclick="add_number(this.id)">+</button>' + '</td>' + '<td id="subtotal">' + item.price * item.count + '元' + '</td>' + '</tr>';
                 sum = item.price * item.count + sum;
                 break;

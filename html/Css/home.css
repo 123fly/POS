@@ -1,40 +1,9 @@
 
-#header {
-    background-color: black;
-    width: 1170px;
-    height: 50px;
-    font-size: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-a{
-    color: #999999;
-    text-decoration: none;
-}
-a:hover{
-    color: white;
-}
-.left {
-    display: inline;
-    float: left;
-    padding: 10px;
-
-}
-.right{
-    float: right;
-    padding-top: 10px;
-}
 .body {
     width: 90%;
     background-color: rgb(245, 245, 245);
     margin: 0 auto;
     margin-top: 100px;
-}
-
-ul {
-    list-style-type:none;
-    padding:0;
-    margin: 0;
 }
 
 button {
@@ -47,17 +16,6 @@ button {
     background-color: rgb(88, 135, 207);
     width: 15%;
 }
-
-img {
-    width: 17px;
-    height: 17px;
-    background-color: white;
-}
-
-body {
-    margin: 0;
-}
-
 .title {
    font-size: 100px;
 }

@@ -74,17 +74,20 @@ function add_cart(id) {
         shopping_list.push(item);
     }
     else {
-        for (var i = 0; i < shopping_list.length; i++) {
-            if (shopping_list[i].barcode == item.barcode) {
-                shopping_list[i].count++;
-                break;
-            }
-            else if (shopping_list[i].barcode != item.barcode && i == shopping_list.length - 1) {
-                shopping_list.push(item);
-                break;
-            }
-        }
+        get_shopping_list(shopping_list,item);
     }
     localStorage.setItem('cart_list', JSON.stringify(shopping_list));
     location.reload();
+}
+function get_shopping_list(shopping_list,item){
+    for (var i = 0; i < shopping_list.length; i++) {
+        if (shopping_list[i].barcode == item.barcode) {
+            shopping_list[i].count++;
+            break;
+        }
+        else if (shopping_list[i].barcode != item.barcode && i == shopping_list.length - 1) {
+            shopping_list.push(item);
+            break;
+        }
+    }
 }
