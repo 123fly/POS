@@ -1,6 +1,10 @@
 /**
  * Created by li on 15-6-17.
  */
+$().ready(function () {
+    show_goods_list();
+    show_number();
+});
 function loadAllItems() {
     return [
         {

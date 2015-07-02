@@ -1,4 +1,9 @@
-
+$().ready(function () {
+    show_item_list();
+    show_promation_item();
+    show_number();
+    show_time();
+});
 var new_shopping_list = JSON.parse(localStorage.getItem('cart_list'));
 var barcodes = JSON.parse(localStorage.getItem('promotion_item'));
 function show_item_list() {
@@ -7,18 +12,8 @@ function show_item_list() {
     for (var i in new_shopping_list) {
         var btn_id = i.toString();
         var item = new_shopping_list[i];
-        for (var j = 0; j < barcodes.length; j++) {
-            if (item.barcode != barcodes[j] && j == barcodes.length - 1) {
-                html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + item.count + '</td>' + '<td id="subtotal">' + item.price * item.count + '元' + '</td>' + '</tr>';
-                sum = sum + item.price * item.count;
-                break;
-            }
-            if (item.barcode == barcodes[j]) {
-                html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + item.count + '</td>' + '<td id="subtotal">' + item.price * (item.count - parseInt(item.count / 3)) + '元(原价：' + item.price * item.count + '元)' + '</td>' + '</tr>';
-                sum = item.price * item.count + sum;
-                break;
-            }
-        }
+        html = get_item_information(html, sum,item)[0];
+        sum = get_item_information(html, sum,item)[1];
     }
     html = '<tr>' + '<td>' + '分类' + '</td>' + '<td>' + '名称' + '</td>' + '<td>' + '单价（元）' + '</td>' + '<td>' + '单位' + '</td>' + '<td>' + '数量' + '</td>' + '<td>' + '小计' + '</td>' + '</tr>' + html;
     sum = '总计：' + sum + '元';
@@ -31,21 +26,14 @@ function show_promation_item() {
     for (var i in new_shopping_list) {
         var btn_id = i.toString();
         var item = new_shopping_list[i];
-        for (var j = 0; j < barcodes.length; j++) {
-            if (item.barcode == barcodes[j]) {
-                if (parseInt(item.count / 3) != 0) {
-                    html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + parseInt(item.count / 3) + '</td>' + '</tr>';
-                    promotion_sum = item.price * parseInt(item.count / 3) + promotion_sum;
-                }
-            }
-        }
+        html = get_promotion(html, item, promotion_sum)[0];
+        promotion_sum = get_promotion(html, item, promotion_sum)[1];
     }
     html = '<tr>' + '<td>' + '分类' + '</td>' + '<td>' + '名称' + '</td>' + '<td>' + '数量' + '</td>' + '</tr>' + html;
     promotion_sum = '节省：' + promotion_sum + '元';
     $('#promotion_item').html(html);
     $('#promotion_sum').html(promotion_sum);
 }
-f
 function open_item_list() {
     var shopping_list = null;
     localStorage.setItem('cart_list', JSON.stringify(shopping_list));
@@ -65,4 +53,36 @@ function show_time() {
         second = dateDigitToString(currentDate.getSeconds()),
         formattedDateString = year + '年' + month + '月' + date + '日 ' + hour + ':' + minute + ':' + second;
     $('#time').html(formattedDateString);
+}
+function get_promotion(html, item, promotion_sum) {
+    var information = [];
+    for (var j = 0; j < barcodes.length; j++) {
+        if (item.barcode == barcodes[j]) {
+            if (parseInt(item.count / 3) != 0) {
+                html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + parseInt(item.count / 3) + '</td>' + '</tr>';
+                promotion_sum = item.price * parseInt(item.count / 3) + promotion_sum;
+            }
+        }
+    }
+    information.push(html);
+    information.push(promotion_sum);
+    return information;
+}
+function get_item_information(html, sum,item) {
+    var item_information = [];
+    for (var j = 0; j < barcodes.length; j++) {
+        if (item.barcode != barcodes[j] && j == barcodes.length - 1) {
+            html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + item.count + '</td>' + '<td id="subtotal">' + item.price * item.count + '元' + '</td>' + '</tr>';
+            sum = sum + item.price * item.count;
+            break;
+        }
+        if (item.barcode == barcodes[j]) {
+            html = html + '<tr>' + '<td>' + item.category + '</td>' + '<td>' + item.name + '</td>' + '<td>' + item.price + '</td>' + '<td>' + item.unit + '</td>' + '<td>' + item.count + '</td>' + '<td id="subtotal">' + item.price * (item.count - parseInt(item.count / 3)) + '元(原价：' + item.price * item.count + '元)' + '</td>' + '</tr>';
+            sum = item.price * item.count + sum;
+            break;
+        }
+    }
+    item_information.push(html);
+    item_information.push(sum);
+    return item_information;
 }
